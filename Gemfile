@@ -24,10 +24,13 @@ group :development, :test do
 end
 
 group :development do
+  gem 'brakeman', '~> 3.4.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'rails_best_practices', '~> 1.19.4'
+  gem 'reek', '~> 5.3.2'
+  gem 'rubocop', '~> 0.67.2', require: false
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'web-console', '>= 3.3.0'
 end
 
 group :test do

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_14_020737) do
+ActiveRecord::Schema.define(version: 2019_04_14_023320) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,23 @@ ActiveRecord::Schema.define(version: 2019_04_14_020737) do
     t.text "playedBy", array: true
     t.string "spouse"
     t.text "titles", array: true
+  end
+
+  create_table "houses", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "region"
+    t.string "coat_of_arms"
+    t.string "words"
+    t.text "titles", array: true
+    t.text "authors", array: true
+    t.integer "overlord_id"
+    t.integer "founder_id"
+    t.string "founded"
+    t.string "died_out"
+    t.text "ancestral_weapons", array: true
+    t.text "cadet_branches", array: true
+    t.index ["founder_id"], name: "index_houses_on_founder_id"
+    t.index ["overlord_id"], name: "index_houses_on_overlord_id"
   end
 
 end

@@ -63,5 +63,13 @@ Metrics/ParameterLists:
 Metrics/PerceivedComplexity:
   Max: 12
 
+Naming/UncommunicativeMethodParamName:
+  Exclude:
+    - app/controllers/graphql_controller.rb
+
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+Style/RescueStandardError:
+  Exclude:
+    - app/controllers/graphql_controller.rb

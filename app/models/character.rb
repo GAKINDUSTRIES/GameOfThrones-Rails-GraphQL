@@ -21,4 +21,6 @@ class Character < ApplicationRecord
   enum gender: %i[Male Female]
 
   validates :name, :gender, presence: true
+
+  scope :filter_by, ->(args) { args.present? ? where(args) : all }
 end

@@ -13,6 +13,6 @@ class AddCharacterModel < ActiveRecord::Migration[5.2]
       t.text :playedBy, array: true
       t.string :spouse
       t.text :titles, array: true
-    end  
+    end
   end
 end

@@ -19,12 +19,14 @@ detectors:
     min_clump_size: 2
   DuplicateMethodCall:
     enabled: true
-    exclude: []
+    exclude:
+      - GraphqlController#handle_error_in_development
     max_calls: 1
     allow_calls: []
   FeatureEnvy:
     enabled: true
-    exclude: []
+    exclude:
+      - GraphqlController#handle_error_in_development
   InstanceVariableAssumption:
     enabled: true
     exclude: []
@@ -59,7 +61,8 @@ detectors:
     - tap
   NilCheck:
     enabled: true
-    exclude: []
+    exclude:
+      - GraphqlController#ensure_hash
   RepeatedConditional:
     enabled: true
     exclude: []
@@ -83,6 +86,7 @@ detectors:
     enabled: true
     exclude:
     - initialize
+    - GraphqlController#execute
     max_statements: 5
   UncommunicativeMethodName:
     enabled: true
@@ -100,7 +104,7 @@ detectors:
     - "/[0-9]$/"
     accept: []
   UncommunicativeParameterName:
-    enabled: true
+    enabled: false
     exclude: []
     reject:
     - "/^.$/"
@@ -109,7 +113,7 @@ detectors:
     - "/^_/"
     accept: []
   UncommunicativeVariableName:
-    enabled: true
+    enabled: false
     exclude: []
     reject:
     - "/^.$/"
@@ -125,5 +129,6 @@ detectors:
     exclude: []
   UtilityFunction:
     enabled: true
-    exclude: []
+    exclude:
+      - Types::QueryType#characters
     public_methods_only: false

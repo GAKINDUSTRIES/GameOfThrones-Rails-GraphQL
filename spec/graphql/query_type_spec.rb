@@ -8,11 +8,11 @@ RSpec.describe Types::QueryType do
   describe '#characters' do
     it 'has a :characters field' do
       expect(subject).to have_field(:characters)
-    end    
+    end
 
     it 'return a list of characters' do
-      pending("check how to execute resolve function for characters field")
-      fail
+      pending('check how to execute resolve function for characters field')
+      raise
     end
   end
 end

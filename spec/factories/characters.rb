@@ -23,7 +23,9 @@ FactoryBot.define do
     born    { 'Somewhere' }
     culture { 'Some culture' }
     died    { 'In 298 AC, at King\'s Landing' }
+    father  { 'Eddard Stark' }
     gender  { 'Male' }
+    mother  { 'Catelyn Stark' }
     name    { Faker::TvShows::GameOfThrones.character }
     titles  { ['Septa'] }
   end

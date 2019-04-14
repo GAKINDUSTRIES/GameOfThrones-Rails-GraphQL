@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_14_023320) do
+ActiveRecord::Schema.define(version: 2019_04_14_050529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "book_characters", force: :cascade do |t|
+    t.bigint "book_id", null: false
+    t.bigint "character_id", null: false
+    t.index ["book_id"], name: "index_book_characters_on_book_id"
+    t.index ["character_id"], name: "index_book_characters_on_character_id"
+  end
 
   create_table "books", force: :cascade do |t|
     t.string "name", null: false
@@ -28,17 +35,25 @@ ActiveRecord::Schema.define(version: 2019_04_14_023320) do
 
   create_table "characters", force: :cascade do |t|
     t.text "aliases", array: true
-    t.text "allegiances", array: true
     t.string "name", null: false
     t.string "born"
     t.string "culture"
     t.string "died"
-    t.string "father"
     t.integer "gender", null: false
-    t.string "mother"
     t.text "playedBy", array: true
     t.string "spouse"
     t.text "titles", array: true
+    t.bigint "father_id"
+    t.bigint "mother_id"
+    t.index ["father_id"], name: "index_characters_on_father_id"
+    t.index ["mother_id"], name: "index_characters_on_mother_id"
+  end
+
+  create_table "house_characters", force: :cascade do |t|
+    t.bigint "house_id", null: false
+    t.bigint "character_id", null: false
+    t.index ["character_id"], name: "index_house_characters_on_character_id"
+    t.index ["house_id"], name: "index_house_characters_on_house_id"
   end
 
   create_table "houses", force: :cascade do |t|
@@ -48,13 +63,17 @@ ActiveRecord::Schema.define(version: 2019_04_14_023320) do
     t.string "words"
     t.text "titles", array: true
     t.text "authors", array: true
-    t.integer "overlord_id"
-    t.integer "founder_id"
+    t.bigint "overlord_id"
+    t.bigint "founder_id"
     t.string "founded"
     t.string "died_out"
     t.text "ancestral_weapons", array: true
     t.text "cadet_branches", array: true
+    t.bigint "current_lord_id"
+    t.bigint "heir_id"
+    t.index ["current_lord_id"], name: "index_houses_on_current_lord_id"
     t.index ["founder_id"], name: "index_houses_on_founder_id"
+    t.index ["heir_id"], name: "index_houses_on_heir_id"
     t.index ["overlord_id"], name: "index_houses_on_overlord_id"
   end
 

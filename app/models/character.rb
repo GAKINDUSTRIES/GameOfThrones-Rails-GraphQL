@@ -20,6 +20,15 @@
 class Character < ApplicationRecord
   enum gender: %i[Male Female]
 
+  has_many :book_characters
+  has_many :books, through: :book_characters
+
+  has_many :house_characters
+  has_many :allegiances, through: :house_characters, source: :house
+
+  belongs_to :mother, optional: true, class_name: 'Character'
+  belongs_to :father, optional: true, class_name: 'Character'
+
   validates :name, :gender, presence: true
 
   scope :filter_by, ->(args) { args.present? ? where(args) : all }

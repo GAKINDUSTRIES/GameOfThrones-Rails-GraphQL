@@ -14,5 +14,8 @@
 #
 
 class Book < ApplicationRecord
+  has_many :book_characters
+  has_many :characters, through: :book_characters
+
   validates :name, presence: true
 end

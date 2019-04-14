@@ -20,6 +20,17 @@
 require 'rails_helper'
 
 describe Character do
+  describe 'Associations' do
+    it { is_expected.to have_many(:house_characters) }
+    it { is_expected.to have_many(:allegiances).through(:house_characters) }
+
+    it { is_expected.to have_many(:book_characters) }
+    it { is_expected.to have_many(:books).through(:book_characters) }
+
+    it { is_expected.to belong_to(:father) }
+    it { is_expected.to belong_to(:mother) }
+  end
+
   describe 'Validations' do
     it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to validate_presence_of(:gender) }
@@ -37,7 +48,7 @@ describe Character do
 
     context 'when filters are passed' do
       let(:name) { { name: 'Tony Stark' } }
-      let(:name_and_father) { name.merge(father: 'Howard Stark') }
+      let(:name_and_culture) { name.merge(culture: 'Marvel Comics') }
 
       context 'when one filter is passed' do
         let!(:expected_character) { create :character, name }
@@ -48,11 +59,11 @@ describe Character do
       end
 
       context 'when multiple filters are passed' do
-        let!(:expected_character) { create :character, name_and_father }
+        let!(:expected_character) { create :character, name_and_culture }
         let!(:not_expected_character) { create :character, name }
 
         it 'should return all records that match all the filters' do
-          expect(described_class.filter_by(name_and_father)).to match_array [expected_character]
+          expect(described_class.filter_by(name_and_culture)).to match_array [expected_character]
         end
       end
     end

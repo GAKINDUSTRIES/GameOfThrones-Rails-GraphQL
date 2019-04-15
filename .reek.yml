@@ -131,6 +131,7 @@ detectors:
     enabled: true
     exclude:
       - Types::QueryType#characters
+      - Types::QueryType#books
       - ApiService#get_books
       - ApiService#get_characters
       - ApiService#get_houses

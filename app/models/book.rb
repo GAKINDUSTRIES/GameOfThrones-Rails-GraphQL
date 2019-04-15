@@ -14,6 +14,8 @@
 #
 
 class Book < ApplicationRecord
+  include Filterable
+
   has_many :book_characters
   has_many :characters, through: :book_characters
 

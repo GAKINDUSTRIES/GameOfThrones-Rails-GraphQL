@@ -20,6 +20,8 @@
 #
 
 class House < ApplicationRecord
+  include Filterable
+
   has_many :house_characters
   has_many :allegiances, through: :house_characters, source: :character
 

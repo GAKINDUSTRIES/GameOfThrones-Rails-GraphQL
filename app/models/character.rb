@@ -17,6 +17,8 @@
 #
 
 class Character < ApplicationRecord
+  include Filterable
+
   enum gender: %i[Male Female]
 
   has_many :book_characters
@@ -30,6 +32,4 @@ class Character < ApplicationRecord
   belongs_to :spouse, optional: true, class_name: 'Character'
 
   validates :name, :gender, presence: true
-
-  scope :filter_by, ->(args) { args.present? ? where(args) : all }
 end

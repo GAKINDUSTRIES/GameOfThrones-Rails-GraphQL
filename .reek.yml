@@ -131,4 +131,7 @@ detectors:
     enabled: true
     exclude:
       - Types::QueryType#characters
+      - ApiService#get_books
+      - ApiService#get_characters
+      - ApiService#get_houses
     public_methods_only: false

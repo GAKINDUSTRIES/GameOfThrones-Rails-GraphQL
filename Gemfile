@@ -19,6 +19,7 @@ gem 'graphql', '1.8.13'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
+  gem 'httparty', '~> 0.16.4'
   gem 'factory_bot_rails', '~> 4.8.2'
   gem 'faker', '~> 1.9.3'
   gem 'pry-byebug', '~> 3.3.0', platform: :mri
@@ -42,6 +43,8 @@ group :test do
   gem 'rspec-graphql_matchers', '~> 0.7.1'
   gem 'simplecov', '~> 0.13.0', require: false
   gem 'shoulda-matchers', '~> 3.1.3'
+  gem 'vcr', '~> 4.0.0'
+  gem 'webmock', '~> 3.5.1'
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

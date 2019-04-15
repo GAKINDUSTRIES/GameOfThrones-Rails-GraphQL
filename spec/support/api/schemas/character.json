@@ -1,0 +1,38 @@
+{
+  "type": "object",
+  "properties": {
+    "url": { "type": "string" },
+    "name": { "type": "string" },
+    "gender": { "type": "string" },
+    "culture": { "type": "string" },
+    "born": { "type": "string" },
+    "died": { "type": "string" },
+    "titles": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "aliases": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "father": { "type": "string" },
+    "mother": { "type": "string" },
+    "spouse": { "type": "string" },
+    "allegiances": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "povBooks": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "tvSeries": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "playedBy": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

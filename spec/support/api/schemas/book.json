@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "url": { "type": "string" },
+    "name": { "type": "string" },
+    "isbn": { "type": "string" },
+    "authors": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "numberOfPages": { "type": "integer" },
+    "publisher": { "type": "string" },
+    "county": { "type": "string" },
+    "mediaType": { "type": "string" },
+    "released": { "type": "string" },
+    "characters": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "povCharacters": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

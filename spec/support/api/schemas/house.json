@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "properties": {
+    "url": { "type": "string" },
+    "name": { "type": "string" },
+    "region": { "type": "string" },
+    "coatOfArms": { "type": "string" },
+    "words": { "type": "string" },
+    "titles": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "seats": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "currentLord": { "type": "string" },
+    "heir": { "type": "string" },
+    "overlord": { "type": "string" },
+    "fourded": { "type": "string" },
+    "diedOut": { "type": "string" },
+    "ancestralWeapons": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "cadetBranches": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "swornMembers": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

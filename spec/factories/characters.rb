@@ -2,19 +2,18 @@
 #
 # Table name: characters
 #
-#  id          :bigint(8)        not null, primary key
-#  aliases     :text             is an Array
-#  allegiances :text             is an Array
-#  name        :string           not null
-#  born        :string
-#  culture     :string
-#  died        :string
-#  father      :string
-#  gender      :integer          not null
-#  mother      :string
-#  playedBy    :text             is an Array
-#  spouse      :string
-#  titles      :text             is an Array
+#  id        :bigint(8)        not null, primary key
+#  aliases   :text             is an Array
+#  name      :string           not null
+#  born      :string
+#  culture   :string
+#  died      :string
+#  gender    :integer          not null
+#  playedBy  :text             is an Array
+#  titles    :text             is an Array
+#  father_id :bigint(8)
+#  mother_id :bigint(8)
+#  spouse_id :bigint(8)
 #
 
 FactoryBot.define do

@@ -87,7 +87,7 @@ detectors:
     exclude:
     - initialize
     - GraphqlController#execute
-    max_statements: 5
+    max_statements: 8
   UncommunicativeMethodName:
     enabled: true
     exclude: []

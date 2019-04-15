@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_14_050529) do
+ActiveRecord::Schema.define(version: 2019_04_15_053149) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,13 +40,14 @@ ActiveRecord::Schema.define(version: 2019_04_14_050529) do
     t.string "culture"
     t.string "died"
     t.integer "gender", null: false
-    t.text "playedBy", array: true
-    t.string "spouse"
+    t.text "played_by", array: true
     t.text "titles", array: true
     t.bigint "father_id"
     t.bigint "mother_id"
+    t.bigint "spouse_id"
     t.index ["father_id"], name: "index_characters_on_father_id"
     t.index ["mother_id"], name: "index_characters_on_mother_id"
+    t.index ["spouse_id"], name: "index_characters_on_spouse_id"
   end
 
   create_table "house_characters", force: :cascade do |t|

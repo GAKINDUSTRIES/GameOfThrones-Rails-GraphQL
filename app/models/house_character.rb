@@ -8,6 +8,8 @@
 #
 
 class HouseCharacter < ApplicationRecord
-  belongs_to :character
-  belongs_to :house
+  # Associations needs to be optional since association can be created even if
+  # one of the entities has not been created yet.
+  belongs_to :character, optional: true
+  belongs_to :house, optional: true
 end

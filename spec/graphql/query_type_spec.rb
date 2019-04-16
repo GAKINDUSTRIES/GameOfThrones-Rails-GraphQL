@@ -28,4 +28,17 @@ RSpec.describe Types::QueryType do
       raise
     end
   end
+
+  describe '#houses' do
+    let!(:houses) { create_list(:house, 3) }
+
+    it 'has a :houses field' do
+      expect(subject).to have_field(:houses)
+    end
+
+    it 'return a list of houses' do
+      pending('check how to execute resolve function for houses field')
+      raise
+    end
+  end
 end

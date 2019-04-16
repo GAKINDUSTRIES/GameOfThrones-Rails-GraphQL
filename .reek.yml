@@ -132,6 +132,7 @@ detectors:
     exclude:
       - Types::QueryType#characters
       - Types::QueryType#books
+      - Types::QueryType#houses
       - ApiService#get_books
       - ApiService#get_characters
       - ApiService#get_houses

@@ -17,4 +17,19 @@ RSpec.describe Types::CharacterType do
     expect(subject).to have_field(:gender)
     expect(subject.fields['gender'].type.to_type_signature).to eq('String!')
   end
+
+  it 'has an :spouse field of Character type' do
+    expect(subject).to have_field(:spouse)
+    expect(subject.fields['spouse'].type.to_type_signature).to eq('Character')
+  end
+
+  it 'has an :father field of Character type' do
+    expect(subject).to have_field(:father)
+    expect(subject.fields['father'].type.to_type_signature).to eq('Character')
+  end
+
+  it 'has an :mother field of Character type' do
+    expect(subject).to have_field(:mother)
+    expect(subject.fields['mother'].type.to_type_signature).to eq('Character')
+  end
 end

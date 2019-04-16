@@ -9,7 +9,9 @@ module Types
     field :died, String, null: true
     field :gender, String, null: false
     field :played_by, [String], null: true
-    field :spouse, String, null: true
+    field :spouse, Types::CharacterType, null: true
+    field :father, Types::CharacterType, null: true
+    field :mother, Types::CharacterType, null: true
     field :titles, [String], null: true
   end
 end

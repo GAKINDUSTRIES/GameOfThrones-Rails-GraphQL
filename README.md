@@ -1,24 +1,22 @@
-# README
+# GameOfThrones GraphQL API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+GameOfThrones GraphQL API is a Ruby on Rails API developed to serve as a GraphQL backend. The idea behind this API is that you get to know how graphql interacts with Ruby on Rails while having fun with your favorite characters of the series.
 
-Things you may want to cover:
 
-* Ruby version
+**Note**: This API is still WIP. Lots of new endpoints and information is coming. Stay tune!
 
-* System dependencies
 
-* Configuration
+Remember, "When you play the game of thrones, you win or you die.""
 
-* Database creation
+You can do funny queries like:
 
-* Database initialization
 
-* How to run the test suite
+![alt text](https://github.com/GAKINDUSTRIES/got_rails_graphql/blob/master/public/query.png)
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
+All information about queries that supports can be found using introspection!
+
+
+
+![alt text](https://github.com/GAKINDUSTRIES/got_rails_graphql/blob/master/public/introspection.png)

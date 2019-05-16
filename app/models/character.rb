@@ -9,7 +9,7 @@
 #  culture   :string
 #  died      :string
 #  gender    :integer          not null
-#  playedBy  :text             is an Array
+#  played_by :text             is an Array
 #  titles    :text             is an Array
 #  father_id :bigint(8)
 #  mother_id :bigint(8)
@@ -21,11 +21,13 @@ class Character < ApplicationRecord
 
   enum gender: %i[Male Female]
 
+  has_many :allegiances, through: :house_characters, source: :house
+
   has_many :book_characters
   has_many :books, through: :book_characters
 
+  has_many :comments, as: :commentable, dependent: :destroy
   has_many :house_characters
-  has_many :allegiances, through: :house_characters, source: :house
 
   belongs_to :father, optional: true, class_name: 'Character'
   belongs_to :mother, optional: true, class_name: 'Character'

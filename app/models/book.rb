@@ -17,6 +17,7 @@ class Book < ApplicationRecord
   include Filterable
 
   has_many :book_characters
+  has_many :comments, as: :commentable, dependent: :destroy
   has_many :characters, through: :book_characters
 
   validates :name, presence: true

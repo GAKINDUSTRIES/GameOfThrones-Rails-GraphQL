@@ -9,7 +9,7 @@
 #  culture   :string
 #  died      :string
 #  gender    :integer          not null
-#  playedBy  :text             is an Array
+#  played_by :text             is an Array
 #  titles    :text             is an Array
 #  father_id :bigint(8)
 #  mother_id :bigint(8)

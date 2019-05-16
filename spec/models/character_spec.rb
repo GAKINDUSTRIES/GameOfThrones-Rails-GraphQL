@@ -9,7 +9,7 @@
 #  culture   :string
 #  died      :string
 #  gender    :integer          not null
-#  playedBy  :text             is an Array
+#  played_by :text             is an Array
 #  titles    :text             is an Array
 #  father_id :bigint(8)
 #  mother_id :bigint(8)
@@ -25,6 +25,8 @@ describe Character do
 
     it { is_expected.to have_many(:book_characters) }
     it { is_expected.to have_many(:books).through(:book_characters) }
+
+    it { is_expected.to have_many(:comments).dependent(:destroy) }
 
     it { is_expected.to belong_to(:father) }
     it { is_expected.to belong_to(:mother) }

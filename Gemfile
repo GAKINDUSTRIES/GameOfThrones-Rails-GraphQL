@@ -19,7 +19,7 @@ gem 'graphql', '1.8.13'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
-  gem 'httparty', '~> 0.16.4'
+  gem 'httparty', '~> 0.21.0'
   gem 'factory_bot_rails', '~> 4.8.2'
   gem 'faker', '~> 1.9.3'
   gem 'pry-byebug', '~> 3.3.0', platform: :mri
